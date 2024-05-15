@@ -30,5 +30,5 @@ buildPythonApplication {
       --replace-fail @PS_COMMAND@ ${procps}/bin/ps
   '';
 
-  src = ./.;
+  src = ../.;
 }

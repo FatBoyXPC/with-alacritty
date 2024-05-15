@@ -1,10 +1,10 @@
-{ pkgs ? import <nixpkgs> { }
-, unpywrap ? (pkgs.callPackage ../unpywrap.nix { })
+{ pkgs
 , alacritty ? pkgs.alacritty
 ,
 }:
 
 let
+  unpywrap = pkgs.callPackage ./unpywrap.nix { };
   with-alacritty = pkgs.symlinkJoin {
     name = "with-alacritty";
     paths = [ (unpywrap (pkgs.python3.pkgs.callPackage ./derivation.nix { })) ];
