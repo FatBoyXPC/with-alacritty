@@ -213,7 +213,8 @@ def _generate_merged_config(pid: int):
     ]
 
     merged = reduce(merge, configs, {})
-    merged["live_config_reload"] = (
+    merged["general"] = merged.get("general", {})
+    merged["general"]["live_config_reload"] = (
         True  # this whole thing relies upon this setting being enabled.
     )
 
