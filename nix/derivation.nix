@@ -6,10 +6,13 @@
 , pytestCheckHook
 , pyxdg
 , tomli-w
+, setuptools
 }:
 buildPythonApplication {
   pname = "with-alacritty";
   version = "1.0";
+  pyproject = true;
+  build-system = [ setuptools ];
 
   checkInputs = [ pytestCheckHook ];
   pytestFlagsArray = [ "--ignore=result" ];
