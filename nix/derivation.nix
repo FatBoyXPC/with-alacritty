@@ -15,7 +15,7 @@ buildPythonApplication {
   build-system = [ setuptools ];
 
   checkInputs = [ pytestCheckHook ];
-  pytestFlagsArray = [ "--ignore=result" ];
+  pytestFlags = [ "--ignore=result" ];
 
   propagatedBuildInputs = [
     mergedeep
